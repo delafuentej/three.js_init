@@ -10,3 +10,10 @@ h1{
 	z-index: 100;
 	display:block;
 }
+
+body {
+	background-color:#cccccc;
+	margin: 0px;
+	overflow: hidden;
+
+}

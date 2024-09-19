@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 // WebGL compatibility check
-import WebGL from 'three/addons/capabilities/WebGL.js';
+//import WebGL from 'three/addons/capabilities/WebGL.js';
 
 //The following method allows you to check if it is supported and display a message to the user if it is not
 // if ( WebGL.isWebGL2Available() ) {
@@ -22,13 +22,19 @@ import WebGL from 'three/addons/capabilities/WebGL.js';
 const scene = new THREE.Scene();
 const scene2 = new THREE.Scene();
 // 2. Camera
-
+//A (perspective) camera simulates the behaviour of a film camera in real life
+//When you set up a camera you need to pass:(These 4 values dictate the 3D space )
+// - in a vertical field of view (fov) => This dictates the size of the vertical space your camera's view can reach.
+// -an aspect ratio => This is the aspect ratio you use to create the horizontal field of view based off the vertical.
+// - a near plane => This is the nearest plane of view (where the camera's view begins).
+// -and a far plane => This is the far plane of view (where the camera's view ends).
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 //const camera2 = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 10, 500 );
-// 3. Renderer
+// 3. Renderer (add a renderer)
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setAnimationLoop( animate );
+// add the renderer element to the DOM so it is in our page
 document.body.appendChild( renderer.domElement );
 
 // To create a cube, we need a BoxGeometry. This is an object that contains all the points (vertices) and fill (faces) of the cube
@@ -49,7 +55,7 @@ scene.add( cube );
 scene.add( cube2 );
 scene.add( cube3 );
 
-
+// place the camera at z of 100
 camera.position.z = 5;
 
 function animate() {
@@ -63,7 +69,7 @@ function animate() {
 
     cube3.rotation.x += 0.04;
     cube.rotation.z -= 0.01;
-    // Rendering the scene
+    // Rendering the scene 
 	renderer.render( scene, camera );
     
 }

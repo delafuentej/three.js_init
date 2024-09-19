@@ -16,7 +16,7 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
-const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
+const camera = new THREE.PerspectiveCamera( 20, window.innerWidth / window.innerHeight, 80, 600 );
 camera.position.set( 0, 0, 100 );
 camera.lookAt( 0, 0, 0 );
 
@@ -32,6 +32,21 @@ points.push( new THREE.Vector3( - 10, 0, 0 ) );
 points.push( new THREE.Vector3( 0, 10, 0 ) );
 points.push( new THREE.Vector3( 10, 0, 0 ) );
 points.push( new THREE.Vector3( -10, 0, 0 ) );
+points.push( new THREE.Vector3( 10,0, 0 ) );
+points.push( new THREE.Vector3( 0,-10, 0 ) );
+points.push( new THREE.Vector3( -10,0, 0 ) );
+points.push( new THREE.Vector3( 0,10, 0 ) );
+points.push( new THREE.Vector3( 0,-10, 0 ) );
+points.push( new THREE.Vector3( 10,-10, 0 ) );
+points.push( new THREE.Vector3( 0,10, 0 ) );
+points.push( new THREE.Vector3(-10,-10, 0 ) );
+points.push( new THREE.Vector3(0,-10, 0 ) );
+points.push( new THREE.Vector3(0,-10, 0 ) );
+points.push( new THREE.Vector3(10,10, 0 ) );
+points.push( new THREE.Vector3(-10,10, 0 ) );
+points.push( new THREE.Vector3(0,-10, 0 ) );
+points.push( new THREE.Vector3(10,10, 0 ) );
+
 
 
 const geometry = new THREE.BufferGeometry().setFromPoints( points );
