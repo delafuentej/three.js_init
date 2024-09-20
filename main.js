@@ -17,6 +17,16 @@ import * as THREE from 'three';
 // To actually be able to display anything with three.js, we need three things: scene, camera and renderer
 // You pass a Scene and a Camera to a Renderer and it renders (draws) the portion of the 3D scene that is inside
 
+// we need 4 elements for a basic scene
+// 1. Scene
+// 2. Objects
+    // - Can be many things like primitive geometries, shapes, imported models, particles, add lights, etc
+    // - An object like a visible object in Three.js is called Mesh
+    // - Mesh ia a combination of a geometry(shape) and a material(how it looks)
+// 3. Camera
+// 4. Renderer
+
+
 // Setting up: 
 // 1. Scene
 const scene = new THREE.Scene();
@@ -55,7 +65,12 @@ scene.add( cube );
 scene.add( cube2 );
 scene.add( cube3 );
 
-// place the camera at z of 100
+// place the camera at z of 100 => it is a theoretical point of view used when rendering
+// we can have multiple cameras but usually we only use one for the scene
+
+// we can transform objects using 'position', 'rotation', 'scale'
+// - we use the position property to move the camera backward/ forwards:
+// 'position' is an object with three relevant properties: x, y, z(backwards, forwards)
 camera.position.z = 5;
 
 function animate() {
